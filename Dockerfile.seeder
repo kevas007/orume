@@ -1,0 +1,17 @@
+FROM php:8.2-cli
+
+# Installer les dépendances système nécessaires pour mysqli
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libzip-dev \
+    default-mysql-client \
+    && rm -rf /var/lib/apt/lists/*
+
+# Installer l'extension mysqli
+RUN docker-php-ext-configure mysqli --with-mysqli=mysqlnd \
+    && docker-php-ext-install -j$(nproc) mysqli
+
+WORKDIR /app
+

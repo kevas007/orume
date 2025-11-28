@@ -1,0 +1,218 @@
+
+
+/* === Style global === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: t
+  color ( #ffffff );  
+  /* background: linear-gradient(135deg, #0a4b2e 40%, #FF914D 100%); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* === Container principal === */
+.container {
+  background: #fff;
+  width: 900px;
+  max-width: 95%;
+  height: 550px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+/* === Panels gauche et droit === */
+.panel {
+  flex: 1;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.6s ease-in-out;
+}
+
+.panel.left {
+  background: #0a4b2e;
+  color: #fff;
+}
+
+.panel.left h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.panel.left p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.panel.left .btn {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.panel.left .btn:hover {
+  background: #fff;
+  color: #1e8b5a;;
+}
+
+/* === Panel droit === */
+.panel.right {
+  background: #fff;
+  color: #333;
+  position: relative;
+}
+
+/* === Formulaires === */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form h2 {
+  color: #0a4b2e;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  background: #F4F4F4;
+  margin: 10px 0;
+  border-radius: 10px;
+  padding: 12px 15px;
+}
+
+.input-field i {
+  color: #0a4b2e;
+  margin-right: 10px;
+}
+
+.input-field input {
+  border: none;
+  outline: none;
+  background: none;
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* === Boutons === */
+.btn {
+  background: #0a4b2e;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #FF914D;
+}
+
+/* === Liens === */
+form p {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+form a {
+  color: #FF914D;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
+
+/* === Icônes sociales === */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.social-icons i {
+  background: #F4F4F4;
+  color: #0a4b2e;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-icons i:hover {
+  background: #FF914D;
+  color: #fff;
+}
+
+/* === Mode "inscription" === */
+.container.sign-up-mode .left {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.container.sign-up-mode .right {
+  background: #fff;
+}
+
+.sign-in-form {
+  display: flex;
+}
+
+.sign-up-form {
+  display: none;
+}
+
+.container.sign-up-mode .sign-in-form {
+  display: none;
+}
+
+.container.sign-up-mode .sign-up-form {
+  display: block;
+}
+
+/* === Responsive === */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .panel {
+    padding: 40px 20px;
+  }
+
+  .input-field {
+    width: 90%;
+  }
+}

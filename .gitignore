@@ -1,0 +1,160 @@
+# ============================================
+# Configuration et variables d'environnement
+# ============================================
+.env
+.env.local
+.env.*.local
+*.env
+
+# ============================================
+# Docker
+# ============================================
+# Volumes Docker
+docker-data/
+db_data/
+*.log
+
+# ============================================
+# IDE et éditeurs
+# ============================================
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# PhpStorm / IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# ============================================
+# Système d'exploitation
+# ============================================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================
+# PHP
+# ============================================
+# Composer
+/vendor/
+composer.phar
+composer.lock
+
+# Logs PHP
+*.log
+php_errors.log
+
+# Cache
+*.cache
+/cache/
+/tmp/
+
+# ============================================
+# Base de données
+# ============================================
+# Dumps SQL
+#*.sql
+*.dump
+#!docker/mysql/init.sql
+
+# ============================================
+# Uploads et fichiers utilisateur
+# ============================================
+# Images uploadées (garder la structure mais ignorer le contenu)
+# admin/images/Admin/affiches/*
+# admin/images/Admin/sites/*
+# admin/images/Admin/identités/*
+# admin/images/Admin/Shoot/*
+
+# Ou ignorer complètement les uploads
+uploads/
+user_uploads/
+
+# ============================================
+# Fichiers temporaires
+# ============================================
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+
+# ============================================
+# Sécurité
+# ============================================
+# Fichiers sensibles
+*.key
+*.pem
+*.cert
+secrets/
+credentials/
+
+# ============================================
+# Node.js (si utilisé pour des outils)
+# ============================================
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# ============================================
+# Build et compilation
+# ============================================
+dist/
+build/
+*.min.js
+*.min.css
+
+# ============================================
+# Tests
+# ============================================
+.phpunit.result.cache
+/coverage/
+/tests/_output/
+
+# ============================================
+# Documentation générée
+# ============================================
+docs/_build/
+*.pdf
+
+# ============================================
+# Fichiers spécifiques au projet
+# ============================================
+# Logs d'application
+logs/
+*.log
+
+# Fichiers de session
+sessions/
+
+# Cache d'application
+app/cache/
+var/cache/
+

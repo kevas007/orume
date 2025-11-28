@@ -1,0 +1,20 @@
+# Configuration Apache pour la partie Admin
+# Protection et réécriture d'URL
+
+# Désactiver l'affichage de la liste des fichiers
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /
+
+# Fichier d'index par défaut
+DirectoryIndex index.php
+
+# Rediriger la racine vers index.php
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ index.php [L,R=301]
+
+# Protection des fichiers sensibles
+<FilesMatch "^(\.env|\.git|connect\.php)$">
+    Require all denied
+</FilesMatch>

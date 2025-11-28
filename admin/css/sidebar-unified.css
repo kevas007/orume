@@ -1,0 +1,345 @@
+/* ============================================
+   STYLES UNIFIÉS POUR LA SIDEBAR ADMIN
+   ============================================
+   Ce fichier contient tous les styles de la sidebar
+   pour garantir une apparence cohérente sur toutes les pages
+*/
+
+/* Sidebar principale */
+.sidebar {
+  width: 220px;
+  background: #05382c; /* Vert Orume dominant */
+  color: #fff;
+  min-height: 100vh;
+  transition: width 0.3s ease, left 0.3s ease;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px 10px;
+  z-index: 1000;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sidebar-header .textorume {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  transition: opacity 0.3s;
+}
+
+/* Hamburger Button */
+.hamburger {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  z-index: 10;
+  position: relative;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger:active {
+  transform: scale(0.95);
+}
+
+.hamburger i {
+  pointer-events: none;
+}
+
+/* Menu */
+.menu {
+  margin-top: 10px;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 8px 0;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.menu a:hover {
+  background: #1e8b5a;
+  transform: translateX(5px);
+}
+
+.menu a.active,
+.menu a.activeAcceuil,
+.menu a.activeMesssage,
+.menu a.activeAffiche,
+.menu a.activeIdentité,
+.menu a.activeShooting {
+  background: #f27c1e;
+  font-weight: bold;
+}
+
+.menu .icon {
+  font-size: 20px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.menu .text {
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+/* Bouton Quitter */
+.menu a.btn-quitter {
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.menu a.btn-quitter:hover {
+  background: #dc3545;
+}
+
+/* Mode replié (collapsed) */
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar.collapsed .menu .text {
+  display: none;
+}
+
+.sidebar.collapsed .menu a {
+  justify-content: center;
+}
+
+.sidebar.collapsed .sidebar-header .textorume {
+  display: none;
+}
+
+.sidebar.collapsed .hamburger {
+  margin-left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Assurer que le hamburger est toujours cliquable */
+.hamburger,
+.hamburger * {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* Main Content - Ajustement selon sidebar */
+.main-content {
+  margin-left: 220px;
+  padding: 20px;
+  flex: 1;
+  transition: margin-left 0.3s ease;
+  min-height: 100vh;
+  width: calc(100% - 220px);
+}
+
+.sidebar.collapsed ~ .main-content,
+body:has(.sidebar.collapsed) .main-content {
+  margin-left: 70px;
+  width: calc(100% - 70px);
+}
+
+/* Overlay pour mobile */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 900;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .sidebar {
+    left: -220px;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar.collapsed {
+    left: -220px;
+  }
+
+  .sidebar.collapsed.open {
+    left: 0;
+    width: 220px;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Tablette */
+@media (max-width: 900px) {
+  .sidebar {
+    left: -220px;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar.collapsed {
+    left: -220px;
+  }
+
+  .sidebar.collapsed.open {
+    left: 0;
+    width: 220px;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 15px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    left: -220px;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar.collapsed {
+    left: -220px;
+  }
+
+  .sidebar.collapsed.open {
+    left: 0;
+    width: 220px;
+  }
+
+  .sidebar-header {
+    padding: 15px;
+  }
+
+  .sidebar-header .textorume {
+    font-size: 18px;
+  }
+
+  .menu a {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .menu .icon {
+    font-size: 18px;
+  }
+
+  .menu .text {
+    font-size: 14px;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 15px;
+  }
+
+  .hamburger {
+    display: flex;
+    font-size: 20px;
+  }
+
+  .overlay {
+    display: block;
+  }
+}
+
+/* Petit mobile */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar-header {
+    padding: 12px;
+  }
+
+  .sidebar-header .textorume {
+    font-size: 16px;
+  }
+
+  .menu a {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .menu .icon {
+    font-size: 16px;
+    min-width: 18px;
+  }
+
+  .menu .text {
+    font-size: 13px;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+}
+

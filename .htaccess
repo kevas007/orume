@@ -1,0 +1,26 @@
+# Configuration Apache pour Orüme
+# Réécriture d'URL pour la partie publique
+
+RewriteEngine On
+RewriteBase /
+
+# Désactiver l'affichage de la liste des fichiers
+Options -Indexes
+
+# Rediriger explicitement la racine vers acceuil.php
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ acceuil.php [L,R=301]
+
+# Redirection vers acceuil.php si fichier/dossier n'existe pas
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/admin
+RewriteCond %{REQUEST_URI} !^/assets
+RewriteCond %{REQUEST_URI} !^/partials
+RewriteRule ^(.*)$ acceuil.php [L]
+
+# Protection des fichiers sensibles
+<FilesMatch "^(\.env|\.git|docker-compose\.yml|Dockerfile)$">
+    Require all denied
+</FilesMatch>
+

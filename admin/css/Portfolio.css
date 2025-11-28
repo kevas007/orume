@@ -1,0 +1,677 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* FORCER L'AFFICHAGE DES BOUTONS SUPPRIMER DANS TOUTES LES PAGES ADMIN */
+button.btn-delete,
+.btn-delete,
+.portfolio-actions .btn-delete,
+.portfolio-card .btn-delete,
+.portfolio-info .btn-delete,
+button[class*="btn-delete"],
+button[data-id].btn-delete {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background-color: #dc3545 !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 16px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 38px !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+body {
+  display: flex;
+  background: #f5f7fa;
+  color: #333;
+}
+
+/* Les styles de la sidebar sont maintenant dans sidebar-unified.css */
+
+/* PAGE PORTFOLIO */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #0a4b2e;
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  height: 50px;
+}
+
+.portfolio {
+  padding: 30px;
+}
+
+.portfolio-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #0a4b2e;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.portfolio-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: visible;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.portfolio-card .portfolio-img {
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.portfolio-card .portfolio-info {
+  overflow: visible !important;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* S'assurer que portfolio-actions est toujours visible dans portfolio-info */
+.portfolio-info .portfolio-actions {
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-info {
+  padding: 15px;
+  color: #333;
+  overflow: visible !important;
+  min-height: auto !important;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-info h3 {
+  font-size: 1.1em;
+  color: #0a4b2e;
+  margin-bottom: 8px;
+}
+
+.portfolio-info p {
+  margin: 4px 0;
+  font-size: 0.9em;
+}
+
+.portfolio-info i {
+  color: #ff8c00;
+  margin-right: 5px;
+}
+
+/* HEADER FORMULAIRE D'AJOUT */
+.portfolio-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #f8fafc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+.portfolio-header .btn-add {
+  background-color: #0a4b2e;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.portfolio-header .btn-add:hover {
+  background-color: #0b5055;
+  transform: scale(1.02);
+}
+
+/* FORMULAIRE D’AJOUT SITE */
+.portfolio-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px 20px;
+  flex: 1;
+}
+
+.portfolio-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-form label {
+  font-weight: 600;
+  color: #0a3d62;
+  margin-bottom: 6px;
+  font-size: 0.9em;
+}
+
+.portfolio-form input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9em;
+  transition: border-color 0.3s ease;
+}
+
+.portfolio-form input:focus {
+  border-color: #ff8c00;
+  outline: none;
+}
+
+/* BOUTONS */
+.btn-submit {
+  background-color: #0a4b2e;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: all 0.3s;
+  white-space: nowrap;
+  width: 150px;
+  height: 40px;
+  margin: 24px 0px 0px 20px;
+}
+
+/* BOUTONS D'ACTIONS - FORCER L'AFFICHAGE */
+.portfolio-actions {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  margin-top: 15px !important;
+  width: 100% !important;
+  flex-wrap: wrap !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  min-height: 40px !important;
+}
+
+/* S'assurer que tous les boutons dans portfolio-actions sont visibles */
+.portfolio-card .portfolio-actions,
+.portfolio-info .portfolio-actions {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.portfolio-actions button {
+  border: none !important;
+  padding: 10px 16px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex: 1 !important;
+  min-width: 120px !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.btn-edit {
+  background-color: #007bff !important;
+  color: white !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: inline-flex !important;
+}
+
+.btn-edit:hover {
+  background-color: #0066cc !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.btn-delete {
+  background-color: #dc3545 !important;
+  color: white !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: inline-flex !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 38px !important;
+}
+
+/* Règle spécifique pour forcer l'affichage des boutons supprimer */
+button.btn-delete,
+.portfolio-actions .btn-delete {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+.btn-delete:hover {
+  background-color: #bb2d3b !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .portfolio-header {
+    flex-direction: column;
+  }
+
+  .portfolio-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-form {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-header .btn-add {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* STYLES POUR BOUTONS */
+.add-btn {
+  background: #0a4b2e;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.add-btn:hover {
+  background: #1e8b5a;
+}
+
+/* Cette règle est déjà définie plus haut, on la supprime pour éviter les conflits */
+
+.edit-btn {
+  color: #1e8b5a;
+}
+
+.delete-btn {
+  color: #e74c3c;
+}
+
+.btn-add {
+  background-color: #0a4b2e;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: background-color 0.3s;
+}
+
+.btn-add:hover {
+  background-color: #1e8b5a;
+}
+
+.btn-save {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #ff8c00;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.btn-save:hover {
+  background-color: #ff9c33;
+}
+
+/* MODAL IMAGE */
+.img-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 70px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  border-radius: 10px;
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.5);}
+  to {transform: scale(1);}
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#caption {
+  text-align: center;
+  color: #ccc;
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+
+/* ============================================
+   SYSTÈME DE FILTRES
+   ============================================ */
+
+.filters-section {
+  margin: 30px 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-group label i {
+  color: #05382c;
+  font-size: 16px;
+}
+
+.filter-input {
+  padding: 10px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: #fff;
+  color: #333;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: #05382c;
+  box-shadow: 0 0 0 3px rgba(5, 56, 44, 0.1);
+}
+
+.filter-input::placeholder {
+  color: #999;
+}
+
+.btn-reset-filters {
+  padding: 10px 20px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  height: fit-content;
+}
+
+.btn-reset-filters:hover {
+  background: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-reset-filters:active {
+  transform: translateY(0);
+}
+
+.btn-reset-filters i {
+  font-size: 14px;
+}
+
+/* Responsive pour les filtres */
+@media (max-width: 768px) {
+  .filters-container {
+    flex-direction: column;
+  }
+  
+  .filter-group {
+    min-width: 100%;
+  }
+  
+  .btn-reset-filters {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* === MEDIA QUERIES COMPLÉMENTAIRES === */
+
+/* Tablette */
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 15px;
+  }
+
+  .portfolio {
+    padding: 20px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+  }
+
+  .portfolio-header {
+    padding: 15px;
+  }
+
+  .filters-section {
+    padding: 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .main-content {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 15px;
+  }
+
+  .portfolio {
+    padding: 15px;
+  }
+
+  .portfolio-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .portfolio-card {
+    border-radius: 10px;
+  }
+
+  .portfolio-img {
+    height: 150px;
+  }
+
+  .portfolio-info {
+    padding: 12px;
+  }
+
+  .portfolio-info h3 {
+    font-size: 1em;
+  }
+
+  .portfolio-info p {
+    font-size: 0.85em;
+  }
+
+  .portfolio-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .portfolio-form {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    margin: 15px 0 0 0;
+  }
+
+  .portfolio-actions {
+    flex-direction: column;
+    gap: 8px !important;
+  }
+
+  .portfolio-actions button {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+    padding: 15px;
+  }
+
+  .filters-section {
+    margin: 20px 0;
+    padding: 15px;
+  }
+}
+
+/* Petit mobile */
+@media (max-width: 480px) {
+  .portfolio {
+    padding: 10px;
+  }
+
+  .portfolio-title {
+    font-size: 1.3em;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .portfolio-img {
+    height: 180px;
+  }
+
+  .portfolio-header .btn-add {
+    width: 100%;
+    text-align: center;
+  }
+
+  .img-modal {
+    padding-top: 50px;
+  }
+
+  .modal-content {
+    max-width: 95%;
+  }
+
+  .close-modal {
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+  }
+}

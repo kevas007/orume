@@ -13,7 +13,7 @@ Ce guide explique comment utiliser Docker pour déployer le projet Orüme avec s
 
 Copiez le fichier `.env.example` en `.env` :
 ```bash
-cp .env.example .env
+cp env.example .env
 ```
 
 Modifiez les valeurs dans `.env` si nécessaire (mots de passe, ports, etc.).

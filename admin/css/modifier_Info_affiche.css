@@ -1,0 +1,191 @@
+.edit-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 165, 0, 0.1);
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-modal-content {
+  background-color: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+/* === TITRE === */
+.edit-modal-content h2 {
+  text-align: center;
+  color: #0a4b2e;
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+
+/* === CHAMPS DU FORMULAIRE === */
+.edit-modal-content .form-group {
+  margin-bottom: 20px;
+}
+
+.edit-modal-content label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.edit-modal-content input[type="text"],
+.edit-modal-content input[type="month"],
+.edit-modal-content input[type="file"] {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background-color: #f9fafb;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.edit-modal-content input:focus {
+  border-color: #0a4b2e;
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.2);
+
+}
+
+/* === BOUTON ENREGISTRER === */
+.btn-edit-save {
+  display: block;
+  width: 100%;
+  background-color: #0a4b2e;
+  color: #fff;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-edit-save:hover {
+  background-color: #ff9933;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+}
+
+/* === ICÔNE DE FERMETURE === */
+.close-edit {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+
+.btn-edit-save {
+  background-color: #0a4b2e;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.btn-edit-save:hover {
+  background-color: #1e8b5a;
+}
+
+.close-edit:hover {
+  color: #ff7b00;
+}
+
+/* === MEDIA QUERIES === */
+
+/* Tablette */
+@media (max-width: 1024px) {
+  .edit-modal-content {
+    width: 450px;
+    padding: 30px 25px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .edit-modal {
+    padding: 15px;
+  }
+
+  .edit-modal-content {
+    width: 95%;
+    max-width: 100%;
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+
+  .edit-modal-content h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .edit-modal-content .form-group {
+    margin-bottom: 18px;
+  }
+
+  .edit-modal-content input[type="text"],
+  .edit-modal-content input[type="month"],
+  .edit-modal-content input[type="file"] {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .btn-edit-save {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .close-edit {
+    top: 12px;
+    right: 15px;
+    font-size: 22px;
+  }
+}
+
+/* Petit mobile */
+@media (max-width: 480px) {
+  .edit-modal-content {
+    padding: 20px 15px;
+  }
+
+  .edit-modal-content h2 {
+    font-size: 18px;
+  }
+
+  .edit-modal-content label {
+    font-size: 13px;
+  }
+}
